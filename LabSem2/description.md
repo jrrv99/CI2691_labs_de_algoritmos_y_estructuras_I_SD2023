@@ -20,5 +20,5 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 - [X] MinimoDeCuatro
 - [x] EsAnioBisiesto
 - [x] EsNumeroPrimo
-- [ ] SonNumerosCoprimos
+- [x] SonNumerosCoprimos
 
