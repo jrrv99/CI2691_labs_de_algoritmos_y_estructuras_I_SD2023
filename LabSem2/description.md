@@ -16,7 +16,7 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 
 ## Completados
 
-- [ ] AreaPerimetroCirculo
+- [x] AreaPerimetroCirculo
 - [ ] MinimoDeCuatro
 - [ ] EsAnioBisiesto
 - [ ] EsNumeroPrimo
