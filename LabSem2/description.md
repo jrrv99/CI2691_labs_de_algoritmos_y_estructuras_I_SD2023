@@ -19,6 +19,6 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 - [x] AreaPerimetroCirculo
 - [X] MinimoDeCuatro
 - [x] EsAnioBisiesto
-- [ ] EsNumeroPrimo
+- [x] EsNumeroPrimo
 - [ ] SonNumerosCoprimos
 
