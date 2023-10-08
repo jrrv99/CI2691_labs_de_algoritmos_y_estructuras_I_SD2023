@@ -10,6 +10,6 @@ class AreaPerimetroCirculo {
         area = Math.PI * Math.sqrt(radio);
         perimetro = 2 * Math.PI * radio;
 
-        System.out.println("Radio: " + radio + "Área: " + area + " Perímetro: " + perimetro);
+        System.out.println("Radio: " + radio + " Área: " + area + " Perímetro: " + perimetro);
     }
 }
