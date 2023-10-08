@@ -12,7 +12,7 @@ Se quiere que realice programas en Java que resuelvan los siguientes problemas:
 
 ## 2. Condiciones de entrega
 
-Los programas del laboratorio (solo los archivos .java) y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato .tar.xz, llamado LabSem2 X.tar.xz, donde X es el número de carné del estudiante. La entrega del archivo LabSem2 X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 PM del día domingo 08 de octubre de 2023.
+Los programas del laboratorio (solo los archivos .java) y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato .tar.xz, llamado LabSem2_X.tar.xz, donde X es el número de carné del estudiante. La entrega del archivo LabSem2_X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 PM del día domingo 08 de octubre de 2023.
 
 ## Completados
 
@@ -22,3 +22,8 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 - [x] EsNumeroPrimo
 - [x] SonNumerosCoprimos
 
+## Comando para la entrega del archivo comprimido
+
+```
+tar -cvJf LabSem2_<YOUR_CARNET>.tar.xz AreaPerimetroCirculo.java MinimoDeCuatro.java EsAnioBisiesto.java EsNumeroPrimo.java SonNumerosCoprimos.java
+```
