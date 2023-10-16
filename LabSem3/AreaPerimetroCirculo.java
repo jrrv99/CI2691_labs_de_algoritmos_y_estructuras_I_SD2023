@@ -1,5 +1,8 @@
 class AreaPerimetroCirculo {
-    public static void areaPerimetroCirculo(double radio) {
+    // @requires radio > 0
+    // @ensures area > 0 area && == Math.PI * radio * radio
+    // @ensures perimetro > 0 perimetro && perimetro == 2 * Math.PI * radio
+    public static /*@ pure @*/ void areaPerimetroCirculo(double radio) {
         double area, perimetro;
 
         if (radio < 0) {
