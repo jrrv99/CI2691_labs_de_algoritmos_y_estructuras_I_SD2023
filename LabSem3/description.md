@@ -13,7 +13,7 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 - [x] AreaPerimetroCirculo
 - [x] MinimoDeCuatro
 - [x] EsAnioBisiesto
-- [ ] EsNumeroPrimo
+- [x] EsNumeroPrimo
 - [ ] SonNumerosCoprimos
 
 ## Comando para la entrega del archivo comprimido
