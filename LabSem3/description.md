@@ -14,7 +14,7 @@ Los programas del laboratorio (solo los archivos .java) y la declaración de aut
 - [x] MinimoDeCuatro
 - [x] EsAnioBisiesto
 - [x] EsNumeroPrimo
-- [ ] SonNumerosCoprimos
+- [x] SonNumerosCoprimos
 
 ## Comando para la entrega del archivo comprimido
 
