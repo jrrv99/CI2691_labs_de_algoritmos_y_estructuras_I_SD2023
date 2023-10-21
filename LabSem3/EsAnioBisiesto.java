@@ -3,6 +3,11 @@ class EsAnioBisiesto {
     public static final int MIN_YEAR = 1900;
     public static final int MAX_YEAR = 2200;
 
+    public static void main(String[] args) {
+        int year = Integer.parseInt(args[0]);
+        esAnioBisiesto(year);
+    }
+
     //@ requires year >= MIN_YEAR && year <= MAX_YEAR;
     //@ ensures esBisiesto == (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0));
     public static void esAnioBisiesto(int year) {
