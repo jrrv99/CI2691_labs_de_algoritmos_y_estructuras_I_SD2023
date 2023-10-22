@@ -23,7 +23,7 @@
 
    > **Programas:** ContarPrimos.java y ClienteContarPrimos.java.
 
-6. **Descripción:** Dada una secuencia de caracteres que representa a una palabra, se quiere saber si la misma es pal ́ındromo o no.
+6. **Descripción:** Dada una secuencia de caracteres que representa a una palabra, se quiere saber si la misma es palíndromo o no.
 
    > **Programas:** EsPalindromo.java y CienteEsPalindromo.java.
 
@@ -43,7 +43,7 @@ Para cada uno de los programas en JML, debe realizar un cliente en JAVA que demu
 
 ## 2. Condiciones de entrega
 
-Los códigos del laboratorio y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato tar.xz, llamado LabSem4 X.tar.xz, donde X es el número de carn é del estudiante. La entrega del archivo LabSem4 X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 pm del d ́ıa domingo 22 de octubre 2023.
+Los códigos del laboratorio y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato tar.xz, llamado LabSem4 X.tar.xz, donde X es el número de carn é del estudiante. La entrega del archivo LabSem4 X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 pm del día domingo 22 de octubre 2023.
 
 ## Comando para la entrega del archivo comprimido
 
@@ -60,7 +60,7 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 | EsPerfecto        | &#9745;  | &#9744; |
 | PromedioSecuencia | &#9745;  | &#9744; |
 | ContarPrimos      | &#9745;  | &#9744; |
-| EsPalindromo      | &#9744;  | &#9744; |
+| EsPalindromo      | &#9745;  | &#9744; |
 | EncontrarCuatro   | &#9744;  | &#9744; |
 | SumaMatriz        | &#9744;  | &#9744; |
 | EsMatrizDiagonal  | &#9744;  | &#9744; |
