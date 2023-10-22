@@ -8,6 +8,7 @@
 
 2. **Descripción:** Dado un número entero positivo _N_ , se debe computar la suma de
    todos los números pares en el intervalo `[0..N )`.
+
    > **Programas:** SumaPares.java y ClienteSumaPares.java.
 
 3. **Descripción:** Dado un número entero positivo, se quiere saber si es o no un número perfecto. Un número es perfecto si la suma de sus divisores menores que él, es igual al número. Por ejemplo, el número 6 es perfecto, porque `6 = 3 + 2 + 1`.
@@ -27,7 +28,9 @@
    > **Programas:** EsPalindromo.java y CienteEsPalindromo.java.
 
 7. **Descripción:** Dada una secuencia de números enteros, se debe retornar la posición en la secuencia de cualquier número cuatro. En caso de que la secuencia no
-   tenga un número cuatro se debe retornar -1. > **Programas:** EncontrarCuatro.java y CienteEncontrarCuatro.java.
+   tenga un número cuatro se debe retornar -1.
+
+   > **Programas:** EncontrarCuatro.java y CienteEncontrarCuatro.java.
 
 8. **Descripción:** Dada una matriz _M × N_ de números enteros, se quiere computar la suma de todos los valores de la matriz.
 
@@ -55,9 +58,10 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 | ContarDivisores   | &#9745;  | &#9744; |
 | SumaPares         | &#9745;  | &#9744; |
 | EsPerfecto        | &#9745;  | &#9744; |
-| PromedioSecuencia | &#9744;  | &#9744; |
+| PromedioSecuencia | &#9745;  | &#9744; |
 | ContarPrimos      | &#9744;  | &#9744; |
 | EsPalindromo      | &#9744;  | &#9744; |
 | EncontrarCuatro   | &#9744;  | &#9744; |
 | SumaMatriz        | &#9744;  | &#9744; |
 | EsMatrizDiagonal  | &#9744;  | &#9744; |
+
