@@ -51,7 +51,7 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 
 | Programa          | Solución |   JML   |
 | ----------------- | :------: | :-----: |
-| ContarDivisores   | &#9744;  | &#9744; |
+| ContarDivisores   | &#9745;  | &#9744; |
 | SumaPares         | &#9744;  | &#9744; |
 | EsPerfecto        | &#9744;  | &#9744; |
 | PromedioSecuencia | &#9744;  | &#9744; |
