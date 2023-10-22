@@ -59,7 +59,7 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 | SumaPares         | &#9745;  | &#9744; |
 | EsPerfecto        | &#9745;  | &#9744; |
 | PromedioSecuencia | &#9745;  | &#9744; |
-| ContarPrimos      | &#9744;  | &#9744; |
+| ContarPrimos      | &#9745;  | &#9744; |
 | EsPalindromo      | &#9744;  | &#9744; |
 | EncontrarCuatro   | &#9744;  | &#9744; |
 | SumaMatriz        | &#9744;  | &#9744; |
