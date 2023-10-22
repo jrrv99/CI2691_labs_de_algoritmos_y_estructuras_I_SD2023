@@ -7,9 +7,10 @@
    > **Programas:** ContarDivisores.java y ClienteContarDivisores.java.
 
 2. **Descripción:** Dado un número entero positivo _N_ , se debe computar la suma de
-   todos los números pares en el intervalo `[0..N )`. > **Programas:** SumaPares.java y ClienteSumaPares.java.
+   todos los números pares en el intervalo `[0..N )`.
+   > **Programas:** SumaPares.java y ClienteSumaPares.java.
 
-3. **Descripción:** Dado un número entero positivo, se quiere saber si es o no un número perfecto. Un número es perfecto si la suma de sus divisores menores que ́el, es igual al número. Por ejemplo, el número 6 es perfecto, porque `6 = 3 + 2 + 1`.
+3. **Descripción:** Dado un número entero positivo, se quiere saber si es o no un número perfecto. Un número es perfecto si la suma de sus divisores menores que él, es igual al número. Por ejemplo, el número 6 es perfecto, porque `6 = 3 + 2 + 1`.
 
    > **Programas:** EsPerfecto.java y ClienteEsPerfecto.java.
 
@@ -39,7 +40,7 @@ Para cada uno de los programas en JML, debe realizar un cliente en JAVA que demu
 
 ## 2. Condiciones de entrega
 
-Los códigos del laboratorio y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato tar.xz, llamado LabSem4 X.tar.xz, donde X es el número de carn ́e del estudiante. La entrega del archivo LabSem4 X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 pm del d ́ıa domingo 22 de octubre 2023.
+Los códigos del laboratorio y la declaración de autenticidad debidamente firmada, deben estar contenidos en un archivo comprimido, con formato tar.xz, llamado LabSem4 X.tar.xz, donde X es el número de carn é del estudiante. La entrega del archivo LabSem4 X.tar.xz, debe hacerse por medio de la plataforma Classroom antes de las 11:50 pm del d ́ıa domingo 22 de octubre 2023.
 
 ## Comando para la entrega del archivo comprimido
 
@@ -52,7 +53,7 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 | Programa          | Solución |   JML   |
 | ----------------- | :------: | :-----: |
 | ContarDivisores   | &#9745;  | &#9744; |
-| SumaPares         | &#9744;  | &#9744; |
+| SumaPares         | &#9745;  | &#9744; |
 | EsPerfecto        | &#9744;  | &#9744; |
 | PromedioSecuencia | &#9744;  | &#9744; |
 | ContarPrimos      | &#9744;  | &#9744; |
