@@ -1,4 +1,4 @@
-# Laboratorio de la semana 3
+# Laboratorio de la semana 4
 
 ## 1. Descripción de la actividad
 
@@ -62,6 +62,6 @@ tar -cvJf LabSem4_<YOUR_CARNET>.tar.xz ContarDivisores.java SumaPares.java EsPer
 | ContarPrimos      | &#9745;  | &#9744; |
 | EsPalindromo      | &#9745;  | &#9744; |
 | EncontrarCuatro   | &#9745;  | &#9744; |
-| SumaMatriz        | &#9744;  | &#9744; |
+| SumaMatriz        | &#9745;  | &#9744; |
 | EsMatrizDiagonal  | &#9744;  | &#9744; |
 
