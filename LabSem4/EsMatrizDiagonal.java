@@ -1,26 +1,15 @@
 class EsMatrizDiagonal {
-    public static void main(String[] args) {
-        int[][] matriz = {
-            {1, 0, 0},
-            {0, 5, 0},
-            {0, 0, 9}
-        };
-        int[][] matriz2 = {
-            {1, 0, 0},
-            {0, 5, 0},
-            {0, 1, 9}
-        };
-
-        System.out.println(esMatrizDiagonal(matriz));
-        System.out.println(esMatrizDiagonal(matriz2));
-    }
-
+    //@ requires (\forall int x; 0 < x && x < matriz.length; matriz[x].length > 0);
+    //@ ensures \result == (\forall int i; 0 <= i && i < matriz.length; (\forall int j; 0 <= j && j < matriz[i].length; (i != j) ==> matriz[i][j] == 0));
     public static boolean esMatrizDiagonal(int[][] matriz) {
-        int row = 0, column, sum = 0;
+        int row = 0, column;
 
+        //@ maintaining (\forall int i; 0 <= i && i < row; (\forall int j; 0 <= j && j < column; (i != j) ==> matriz[i][j] == 0));
+        //@ decreases matriz.length - row;
         while(row < matriz.length) {
             column = 0;
             while (column < matriz.length) {
+                if (row == column && matriz[row][column] == 0) return false;
                 if (row != column && matriz[row][column] != 0) return false;
 
                 column++;
