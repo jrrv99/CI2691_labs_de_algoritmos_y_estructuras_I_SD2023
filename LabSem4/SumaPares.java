@@ -6,11 +6,11 @@ class SumaPares {
 		int divisor = 0, sum = 0;
 
 		//@ maintaining  0 <= divisor <= N;
-		//@ maintaining suma == (\sum int k; 0 < k && k < divisor && k % 2 == 0; k);
+		//@ maintaining sum == (\sum int k; 0 < k && k < divisor && k % 2 == 0; k);
 		//@ decreasing N - divisor;
 		while (divisor <= N) {
 			if (divisor % 2 == 0) {
-				sum + divisor;
+				sum += divisor;
 			}
 
 			divisor++;
