@@ -1,6 +1,7 @@
 class EsMatrizDiagonal {
     //@ requires matriz != null;
     //@ requires (\forall int i; 0 <= i && i < matriz.length; matriz[i].length == matriz.length);
+    //@ requires (\forall int i; 0 <= i && i < matriz.length; (\forall int j; 0 <= j && j < matriz.length; matriz[i][j] >= 0));
     //@ ensures \result == (\forall int i; 0 <= i && i < matriz.length; (\forall int j; 0 <= j && j < matriz.length; ((i == j) ==> matriz[i][j] != 0) && ((i != j) ==> matriz[i][j] == 0)));
     public static boolean esMatrizDiagonal(int[][] matriz) {
         int row = 0, column;
