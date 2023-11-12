@@ -34,6 +34,21 @@ class Cliente  {
         assert checkFechas(correcto, resultado) : "Error en la tercera prueba de diferencia de fechas";
     }
 
+    public static void testOrdenamiento() {
+        int[] prueba = new int[] {
+            3, 1, 2, 4, 67, 1, 9, 7, 3, 4, 2, 4, 78, 12, 33, 4, 6, 7, 9, 888, 23,
+            1, 4, 5, 6, 5, 5, 5, 5, 1, 1, 3, 567, 23, 4, 5, 6, 23, 47, 89, 57, 12,
+            78
+        };
+        assert !Utilidades.estaOrdenadoDescendente(prueba) : "Error, el arreglo no esta ordenado";
+
+        prueba = new int[] {
+            1, 1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6,
+            6, 7, 7, 9, 9, 12, 12, 23, 23, 23, 33, 47, 57, 67, 78, 78, 89, 567, 888
+        };
+        assert Utilidades.estaOrdenadoAscendente(prueba) : "Error, el arreglo si esta ordenado";
+    }
+
     public static void main(String[] args) {
         System.out.println("\nesDivisor - START TEST");
         testEsDivisor();
@@ -46,6 +61,10 @@ class Cliente  {
         System.out.println("\ndiferenciaEntreFechas - START TEST");
         testDiferenciaEntreFechas();
         System.out.println("diferenciaEntreFechas - END TEST");
+
+        System.out.println("\nestaOrdenadoDescendente - START TEST");
+
+        System.out.println("estaOrdenadoDescendente - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {

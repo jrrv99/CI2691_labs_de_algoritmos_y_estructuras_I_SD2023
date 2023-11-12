@@ -1,5 +1,4 @@
 public class Utilidades {
-
     /*@ requires Integer.MIN_VALUE <= n < Integer.MAX_VALUE;
       @ ensures Integer.MIN_VALUE <= \result <= Integer.MAX_VALUE; 
       @ ensures \result == n + 1;
@@ -36,7 +35,7 @@ public class Utilidades {
         //@ maintaining 1 <= i <= exp;
         //@ maintaining Integer.MIN_VALUE < resultado < Integer.MAX_VALUE;
         //@ maintaining resultado == spec_exponenciar(base, i);
-        //@ decreases exp - i;
+        //@ decreasing exp - i;
         while (exp > i) {
             i = incremento(i);
             resultado = base * resultado;
@@ -129,5 +128,35 @@ public class Utilidades {
         }
         
         return diff;
+    }
+
+    //@ requires a.length > 0;
+    //@ ensures \result == (\forall int j; 0 <= j && j < (a.length - 1); a[j] <= a[j + 1]);
+    public static /*@ pure @*/ boolean estaOrdenadoAscendente(int[] a) {
+        int i = 1;
+
+        //@ maintaining 0 < i <= a.length;
+        //@ maintaining (\forall int j; 0 < j && j < i; a[j - 1] <= a[j]);
+        //@ decreases a.length - i;
+        while (i < a.length) {
+            if (a[i - 1] > a [i]) return false;
+            i = i +1;
+        }
+        return true;
+    }
+
+    //@ requires a.length > 0;
+    //@ ensures \result == (\forall int j; 0 <= j && j < (a.length - 1); a[j] >= a[j + 1]);
+    public static /*@ pure @*/ boolean estaOrdenadoDescendente(int[] a) {
+        int i = 1;
+
+        //@ maintaining 0 < i <= a.length;
+        //@ maintaining (\forall int j; 0 < j && j < i; a[j - 1] >= a[j]);
+        //@ decreases a.length - i;
+        while (i < a.length) {
+            if (a[i - 1] < a [i]) return false;
+            i = i +1;
+        }
+        return true;
     }
 }
