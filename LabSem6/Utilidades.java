@@ -159,4 +159,27 @@ public class Utilidades {
         }
         return true;
     }
+
+    ///@ requires 0 <= sec.length <= Integer.MAX_VALUE;
+    //@ requires (\forall int k; 0 <= k && k < sec.length; 0 <= sec[k] && sec[k] < sec.length);
+    //@ ensures \result == true <== (\forall int k; 0 <= k && k < sec.length; (\exists int j; 0 <= j && j < sec.length; sec[j] == k));
+    public static /*@ pure @*/ boolean esPermutacion(int[] sec) {
+        boolean[] is = new boolean[sec.length];
+        int i = 0;
+
+        //@ maintaining 0 <= i <= sec.length;
+        //@ maintaining (\forall int k; 0 <= k && k < sec.length; is[k] == (\exists int j; 0 <= j && j < i; sec[j] == k));
+        //@ decreasing sec.length - i;
+        while (i < sec.length) {
+            int num = sec[i];
+            if (num < 0 || num >= sec.length) {
+                return false;
+            }
+            is[num] = true;
+
+            i++;
+        }
+
+        return true;
+    }
 }

@@ -49,6 +49,22 @@ class Cliente  {
         assert Utilidades.estaOrdenadoAscendente(prueba) : "Error, el arreglo si esta ordenado";
     }
 
+    public static void testEsPermutacion() {
+        int[] prueba = new int[] {
+            28, 9, 6, 22, 13, 20, 31, 23, 36, 27, 32, 39, 30, 7, 1, 34, 15, 29,
+            0, 33, 21, 17, 24, 25, 8, 2, 37, 3, 18, 5, 19, 4, 12, 35, 38, 11,
+            14, 10, 16, 26
+        };
+        assert Utilidades.esPermutacion(prueba) : "Error, si es una permutacion";
+
+        prueba = new int[] {
+            28, 9, 6, 22, 13, 20, 31, 23, 36, 27, 32, 34, 15, 29, 0, 33, 21,
+            17, 24, 25, 8, 2, 37, 3, 18, 5, 19, 4, 12, 35, 38, 11, 14, 10,
+            16, 26
+        };
+        assert !Utilidades.esPermutacion(prueba) : "Error, si no es una permutacion";
+    }
+
     public static void main(String[] args) {
         System.out.println("\nesDivisor - START TEST");
         testEsDivisor();
@@ -63,8 +79,12 @@ class Cliente  {
         System.out.println("diferenciaEntreFechas - END TEST");
 
         System.out.println("\nestaOrdenadoDescendente - START TEST");
-
+        testOrdenamiento();
         System.out.println("estaOrdenadoDescendente - END TEST");
+
+        System.out.println("\nesPermutacion - START TEST");
+        testEsPermutacion();
+        System.out.println("esPermutacion - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {

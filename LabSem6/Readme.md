@@ -44,7 +44,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 - [x] 3. diferenciaEntreFechas
 - [x] 4. estaOrdenadoAscendente
 - [x] 5. estaOrdenadoDescendente
-- [ ] 6. esPremutacion
+- [x] 6. esPremutacion
 - [ ] 7. sumaMaxima
 - [ ] 8. esMatrizSimetrica
 - [ ] 9. esMatrizTrigangularSuperior
