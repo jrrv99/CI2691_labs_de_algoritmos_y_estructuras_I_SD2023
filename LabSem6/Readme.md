@@ -40,7 +40,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 ## Terminados
 
 - [x] 1. esDivisor
-- [ ] 2. esPrimo
+- [x] 2. esPrimo
 - [ ] 3. diferenciaEntreFechas
 - [ ] 4. estaOrdenadoAscendente
 - [ ] 5. estaOrdenadoDescendente

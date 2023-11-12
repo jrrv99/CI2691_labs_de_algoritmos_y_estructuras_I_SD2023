@@ -49,4 +49,23 @@ public class Utilidades {
     public static /*@ pure @*/ boolean esDivisor(int n, int m) {
         return n % m == 0;
     }
+
+    /*@ requires 1 < n <= Integer.MAX_VALUE;
+      @ ensures \result == (\forall int k; 2 <= k && k < n; n % k != 0);
+      @*/
+    public static /*@ pure @*/ boolean esPrimo(int n) {
+        int i = 2;
+
+        if (n < 2) return false;
+
+        /*@ maintaining 2 <= i <= n;
+          @ maintaining (\forall int k; 2 <= k && k < i; n % k != 0);
+          @ decreasing n - i;
+          @*/
+        while (i < n) {
+            if (n % i ==0) return false;
+            i++;
+        }
+        return true;
+    }
 }
