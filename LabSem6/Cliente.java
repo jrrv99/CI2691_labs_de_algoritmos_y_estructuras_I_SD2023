@@ -1,4 +1,40 @@
 class Cliente  {
+
+    public static void main(String[] args) {
+        System.out.println("\nesDivisor - START TEST");
+        testEsDivisor();
+        System.out.println("esDivisor - END TEST");
+
+        System.out.println("\nesPrimo - START TEST");
+        testEsPrimo();
+        System.out.println("esPrimo - END TEST");
+
+        System.out.println("\ndiferenciaEntreFechas - START TEST");
+        testDiferenciaEntreFechas();
+        System.out.println("diferenciaEntreFechas - END TEST");
+
+        System.out.println("\nestaOrdenadoDescendente - START TEST");
+        testOrdenamiento();
+        System.out.println("estaOrdenadoDescendente - END TEST");
+
+        System.out.println("\nesPermutacion - START TEST");
+        testEsPermutacion();
+        System.out.println("esPermutacion - END TEST");
+        
+        System.out.println("\nsumaMaxima - START TEST");
+        testSumaMaxima();
+        System.out.println("sumaMaxima - END TEST");
+    }
+
+    private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
+        if ((fcorrecta[0] != fobtenida[0]) && (fcorrecta[1] != fobtenida[1]) && (fcorrecta[2] != fobtenida[2]) ) {
+            System.out.println("\nDiscrepancia\n, diferencia correcta: "+fcorrecta[0]+" anios, "+fcorrecta[1]+" meses, "+fcorrecta[2]+" dias");
+            System.out.println("\nDiscrepancia\n, diferencia dada: "+fobtenida[0]+" anios, "+fobtenida[1]+" meses, "+fobtenida[2]+" dias");
+            return false;
+        }
+        return true;
+    }
+
     public static void testEsDivisor() {
         assert Utilidades.esDivisor(234567, 3) : "Error, 234567 es divisible por 3";
         assert !Utilidades.esDivisor(234568, 7) : "Error, 234568 no es divisible por 7";
@@ -65,34 +101,11 @@ class Cliente  {
         assert !Utilidades.esPermutacion(prueba) : "Error, si no es una permutacion";
     }
 
-    public static void main(String[] args) {
-        System.out.println("\nesDivisor - START TEST");
-        testEsDivisor();
-        System.out.println("esDivisor - END TEST");
+    public static void testSumaMaxima() {
+        int[] test = {-1, -8, 3, 2, -1};
+        assert Utilidades.sumaMaxima(test) != 5 : "Error, la suma maxima es 5";
 
-        System.out.println("\nesPrimo - START TEST");
-        testEsPrimo();
-        System.out.println("esPrimo - END TEST");
-
-        System.out.println("\ndiferenciaEntreFechas - START TEST");
-        testDiferenciaEntreFechas();
-        System.out.println("diferenciaEntreFechas - END TEST");
-
-        System.out.println("\nestaOrdenadoDescendente - START TEST");
-        testOrdenamiento();
-        System.out.println("estaOrdenadoDescendente - END TEST");
-
-        System.out.println("\nesPermutacion - START TEST");
-        testEsPermutacion();
-        System.out.println("esPermutacion - END TEST");
-    }
-
-    private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
-        if ((fcorrecta[0] != fobtenida[0]) && (fcorrecta[1] != fobtenida[1]) && (fcorrecta[2] != fobtenida[2]) ) {
-            System.out.println("\nDiscrepancia\n, diferencia correcta: "+fcorrecta[0]+" anios, "+fcorrecta[1]+" meses, "+fcorrecta[2]+" dias");
-            System.out.println("\nDiscrepancia\n, diferencia dada: "+fobtenida[0]+" anios, "+fobtenida[1]+" meses, "+fobtenida[2]+" dias");
-            return false;
-        }
-        return true;
+        int[] test2 = {-1, -8, 3, 2, -1};
+        assert Utilidades.sumaMaxima(test2) != 10 : "Error, la suma maxima es 10";
     }
 }
