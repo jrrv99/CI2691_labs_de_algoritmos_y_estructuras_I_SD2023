@@ -41,4 +41,12 @@ public class Utilidades {
         }
         return resultado;
     }
+
+    /*@ requires Integer.MIN_VALUE <= n <= Integer.MAX_VALUE;
+      @ requires Integer.MIN_VALUE <= m <= Integer.MAX_VALUE && m != 0;
+      @ ensures \result == (n % m == 0);
+      @*/
+    public static /*@ pure @*/ boolean esDivisor(int n, int m) {
+        return n % m == 0;
+    }
 }
