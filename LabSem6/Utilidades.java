@@ -248,14 +248,11 @@ public class Utilidades {
     public static /*@ pure @*/ boolean esMatrizTrigangularSuperior(int[][] matriz) {
         int row = 0, column;
         while (row < matriz.length) {
-            column = row;
+            column = 0;
             while (column < matriz.length) {
-                if (row == column && matriz[row][column] == 0) return false;
-                if (row == column) continue;
+                if (row <= column && matriz[row][column] == 0) return false;
+                if (row > column && matriz[row][column] != 0) return false;
 
-                if ((matriz[row][column] == 0) || (matriz[column][row] != 0)) {
-                    return false;
-                }
                 column++;
             }
             row++;
@@ -267,14 +264,11 @@ public class Utilidades {
     public static /*@ pure @*/ boolean esMatrizTrigangularInferior(int[][] matriz) {
         int row = 0, column;
         while (row < matriz.length) {
-            column = row;
+            column = 0;
             while (column < matriz.length) {
-                if (row == column && matriz[row][column] == 0) return false;
-                if (row == column) continue;
+                if (row >= column && matriz[row][column] == 0) return false;
+                if (row < column && matriz[row][column] != 0) return false;
 
-                if ((matriz[row][column] != 0) || (matriz[column][row] == 0)) {
-                    return false;
-                }
                 column++;
             }
             row++;
