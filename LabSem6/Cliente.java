@@ -20,7 +20,7 @@ class Cliente  {
         System.out.println("\nesPermutacion - START TEST");
         testEsPermutacion();
         System.out.println("esPermutacion - END TEST");
-        
+
         System.out.println("\nsumaMaxima - START TEST");
         testSumaMaxima();
         System.out.println("sumaMaxima - END TEST");
@@ -28,6 +28,14 @@ class Cliente  {
         System.out.println("\nesMatrizSimetrica - START TEST");
         testEsMatrizSimetrica();
         System.out.println("esMatrizSimetrica - END TEST");
+
+        System.out.println("\nesMatrizTrigangularSuperior - START TEST");
+        testEsMatrizTrigangularSuperior();
+        System.out.println("esMatrizTrigangularSuperior - END TEST");
+
+        System.out.println("\nesMatrizTrigangularInferior - START TEST");
+        testEsMatrizTrigangularInferior();
+        System.out.println("esMatrizTrigangularInferior - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
@@ -127,5 +135,37 @@ class Cliente  {
 
         assert !Utilidades.esMatrizSimetrica(matrizSim) : "Error, la matriz es Simetrica";
         assert Utilidades.esMatrizSimetrica(matrizNoSim) : "Error, la matriz no es Simetrica";
+    }
+
+    public static void testEsMatrizTrigangularSuperior() {
+        int[][] matrizTriSup = {
+            {1, 2, 3},
+            {0, 6, 4},
+            {0, 0, 5}
+        };
+        int[][] matrizNoTriSup = {
+            {1, 2, 3},
+            {2, 6, 7},
+            {3, 4, 5}
+        };
+
+        assert !Utilidades.esMatrizTrigangularSuperior(matrizTriSup) : "Error, la matriz sí es Triangular Superior";
+        assert Utilidades.esMatrizTrigangularSuperior(matrizNoTriSup) : "Error, la matriz no es Triangular Superior";
+    }
+
+    public static void testEsMatrizTrigangularInferior() {
+        int[][] matrizTriInf = {
+            {1, 0, 0},
+            {2, 6, 0},
+            {3, 4, 5}
+        };
+        int[][] matrizNoTriInf = {
+            {1, 2, 3},
+            {2, 6, 7},
+            {3, 4, 5}
+        };
+
+        assert !Utilidades.esMatrizTrigangularInferior(matrizTriInf) : "Error, la matriz sí es Triangular Inferior";
+        assert Utilidades.esMatrizTrigangularInferior(matrizNoTriInf) : "Error, la matriz no es Triangular Inferior";
     }
 }
