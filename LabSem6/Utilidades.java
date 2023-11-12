@@ -244,4 +244,42 @@ public class Utilidades {
 
         return true;
     }
+
+    public static /*@ pure @*/ boolean esMatrizTrigangularSuperior(int[][] matriz) {
+        int row = 0, column;
+        while (row < matriz.length) {
+            column = row;
+            while (column < matriz.length) {
+                if (row == column && matriz[row][column] == 0) return false;
+                if (row == column) continue;
+
+                if ((matriz[row][column] == 0) || (matriz[column][row] != 0)) {
+                    return false;
+                }
+                column++;
+            }
+            row++;
+        }
+
+        return true;
+    }
+
+    public static /*@ pure @*/ boolean esMatrizTrigangularInferior(int[][] matriz) {
+        int row = 0, column;
+        while (row < matriz.length) {
+            column = row;
+            while (column < matriz.length) {
+                if (row == column && matriz[row][column] == 0) return false;
+                if (row == column) continue;
+
+                if ((matriz[row][column] != 0) || (matriz[column][row] == 0)) {
+                    return false;
+                }
+                column++;
+            }
+            row++;
+        }
+
+        return true;
+    }
 }
