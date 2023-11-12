@@ -160,7 +160,7 @@ public class Utilidades {
         return true;
     }
 
-    ///@ requires 0 <= sec.length <= Integer.MAX_VALUE;
+    //@ requires 0 <= sec.length <= Integer.MAX_VALUE;
     //@ requires (\forall int k; 0 <= k && k < sec.length; 0 <= sec[k] && sec[k] < sec.length);
     //@ ensures \result == true <== (\forall int k; 0 <= k && k < sec.length; (\exists int j; 0 <= j && j < sec.length; sec[j] == k));
     public static /*@ pure @*/ boolean esPermutacion(int[] sec) {
@@ -181,5 +181,38 @@ public class Utilidades {
         }
 
         return true;
+    }
+
+    public static int startSumaMaxima = 0; // p
+    public static int endSumaMaxima = 0; //q
+    //@ ensures sec != null;
+    //@ ensures 0 < sec.length <= Integer.MAX_VALUE;
+    //@ ensures \result == (\sum int i; startSumaMaxima <= i && i < endSumaMaxima; sec[i]);
+    public static /*@ pure @*/ int sumaMaxima(int[] sec) {
+        int currentSum = 0,
+            maxSum = 0,
+            i = 0;
+
+        //@ maintaining 0 <= i <= sec.length;
+        //@ maintaining maxSum == (\sum int k; startSumaMaxima <= k && k < endSumaMaxima; sec[k]);
+        //@ decreasing sec.length - i;
+        while (i < sec.length) {
+            currentSum += sec[i];
+
+            if (currentSum < 0) {
+                currentSum = 0;
+                startSumaMaxima = incremento(i);
+            }
+
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+                endSumaMaxima = incremento(i);
+            }
+
+            i++;
+        }
+
+        //@ assume maxSum >= 0;
+        return maxSum;
     }
 }
