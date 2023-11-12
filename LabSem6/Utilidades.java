@@ -160,9 +160,10 @@ public class Utilidades {
         return true;
     }
 
-    //@ requires 0 <= sec.length <= Integer.MAX_VALUE;
-    //@ requires (\forall int k; 0 <= k && k < sec.length; 0 <= sec[k] && sec[k] < sec.length);
-    //@ ensures \result == true <== (\forall int k; 0 <= k && k < sec.length; (\exists int j; 0 <= j && j < sec.length; sec[j] == k));
+    /*@ requires 0 <= sec.length <= Integer.MAX_VALUE;
+      @ requires (\forall int k; 0 <= k && k < sec.length; 0 <= sec[k] && sec[k] < sec.length);
+      @ ensures \result == true <== (\forall int k; 0 <= k && k < sec.length; (\exists int j; 0 <= j && j < sec.length; sec[j] == k));
+      @*/
     public static /*@ pure @*/ boolean esPermutacion(int[] sec) {
         boolean[] is = new boolean[sec.length];
         int i = 0;
@@ -185,9 +186,10 @@ public class Utilidades {
 
     public static int startSumaMaxima = 0; // p
     public static int endSumaMaxima = 0; //q
-    //@ ensures sec != null;
-    //@ ensures 0 < sec.length <= Integer.MAX_VALUE;
-    //@ ensures \result == (\sum int i; startSumaMaxima <= i && i < endSumaMaxima; sec[i]);
+    /*@ ensures sec != null;
+      @ ensures 0 < sec.length <= Integer.MAX_VALUE;
+      @ ensures \result == (\sum int i; startSumaMaxima <= i && i < endSumaMaxima; sec[i]);
+      @*/
     public static /*@ pure @*/ int sumaMaxima(int[] sec) {
         int currentSum = 0,
             maxSum = 0,
@@ -214,5 +216,32 @@ public class Utilidades {
 
         //@ assume maxSum >= 0;
         return maxSum;
+    }
+
+    /*@ requires matriz != null;
+      @ requires 0 < matriz.length <= Integer.MAX_VALUE;
+      @ requires (\forall int k; 0 <= k && k < matriz.length; matriz[k].length == matriz.length);
+      @ ensures \result == true <== (\forall int i; 0 <= i && i < matriz.length; (\forall int j; 0 <= j && j <= matriz.length; matriz[i][j] == matriz[j][i]));
+      @*/
+    public static /*@ pure @*/ boolean esMatrizSimetrica(int[][] matriz) {
+        int row = 0, column = 0;
+
+        //@ maintaining 0 <= row <= matriz.length;
+        //@ maintaining true <== (\forall int i; 0 <= i && i < row; (\forall int j; 0 <= j && j <= column; matriz[i][j] == matriz[j][i]));
+        // decreasing matriz.length - row;
+        while (row < matriz.length) {
+            column = 0;
+
+            //@ maintaining 0 <= column <= matriz[row].length;
+            //@ maintaining true <== (\forall int j; 0 <= j && j <= column; matriz[row][j] == matriz[j][row]);
+            //@ decreasing matriz[row].length - column;
+            while (column < matriz.length) {
+                if (matriz[row][column] != matriz[column][row]) return false;
+                column++;
+            }
+            row++;
+        }
+
+        return true;
     }
 }

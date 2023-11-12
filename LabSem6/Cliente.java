@@ -24,6 +24,10 @@ class Cliente  {
         System.out.println("\nsumaMaxima - START TEST");
         testSumaMaxima();
         System.out.println("sumaMaxima - END TEST");
+
+        System.out.println("\nesMatrizSimetrica - START TEST");
+        testEsMatrizSimetrica();
+        System.out.println("esMatrizSimetrica - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
@@ -107,5 +111,21 @@ class Cliente  {
 
         int[] test2 = {-1, -8, 3, 2, -1};
         assert Utilidades.sumaMaxima(test2) != 10 : "Error, la suma maxima es 10";
+    }
+
+    public static void testEsMatrizSimetrica() {
+        int[][] matrizSim = {
+            {1, 2, 3},
+            {2, 6, 4},
+            {3, 4, 5}
+        };
+        int[][] matrizNoSim = {
+            {1, 2, 3},
+            {2, 6, 7},
+            {3, 4, 5}
+        };
+
+        assert !Utilidades.esMatrizSimetrica(matrizSim) : "Error, la matriz es Simetrica";
+        assert Utilidades.esMatrizSimetrica(matrizNoSim) : "Error, la matriz no es Simetrica";
     }
 }
