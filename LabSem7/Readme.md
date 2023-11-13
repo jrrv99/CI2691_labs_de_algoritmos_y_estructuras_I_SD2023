@@ -14,7 +14,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 
 - [x] 1. posicionDelMayorDeLaSecuencia:
 - [x] 2. posicionDelMenorDeLaSecuencia:
-- [ ] 3. valorAbsolutoReal:
+- [x] 3. valorAbsolutoReal:
 - [ ] 4. exponenteNumeroReal:
 - [ ] 5. exponenteExponenteNumeroReal:
 - [ ] 6. logaritmoNatural:

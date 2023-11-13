@@ -432,4 +432,12 @@ public class Utilidades {
 
         return minPos;
     }
+
+    /*@ requires x != null;
+      @ ensures \java_math(\Math.abs(\result - Math.abs(x)) < 0.001);
+      @*/
+    public static /*@ pure @*/ double valorAbsolutoReal(double x) {
+        if (x >= 0) return x;
+        return -x;
+    }
 }
