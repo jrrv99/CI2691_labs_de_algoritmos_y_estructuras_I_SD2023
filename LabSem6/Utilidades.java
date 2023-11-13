@@ -373,4 +373,25 @@ public class Utilidades {
     public static /*@ pure @*/ double promedioSecuencia(double[] sec) {
         return sumaSecuencia(sec) / (sec.length * 1.0);
     }
+
+    public static double promedio = 0.0;
+    /*@ requires sec != null;
+      @ requires sec.length > 0;
+      @ ensures \result <= Math.sqrt( (\sum int j; 0 <= j && j < sec.length; Math.pow(sec[j] - promedio, 2.0)) /(sec.length*1.0));
+      @*/
+    public static /*@ pure @*/ double desvStdSecuencia(double[] sec) {
+        int i = 0;
+        double desvStdSum = 0;
+        promedio = promedioSecuencia(sec);
+
+        /*@ maintaining 0 <= i <= sec.length;
+            maintaining desvStdSum <= (\sum int k; 0 <= k && k < i; Math.pow(sec[k] - promedio, 2.0));
+          @*/
+        while(i < sec.length) {
+            desvStdSum += (sec[i] - promedio)*(sec[i] - promedio);
+            i++;
+        }
+
+        return Math.sqrt(desvStdSum / (sec.length * 0.1));
+    }
 }
