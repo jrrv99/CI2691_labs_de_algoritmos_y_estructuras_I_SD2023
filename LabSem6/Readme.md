@@ -51,7 +51,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 - [x] 10. esMatrizTrigangularInferior
 - [x] 11. esMatrizDiagonal
 - [x] 12. sumaSecuencia
-- [ ] 13. promedioSecuencia
+- [x] 13. promedioSecuencia
 - [ ] 14. desvStdSecuencia
 
 ## Comando para la Entrega del tar.xz
