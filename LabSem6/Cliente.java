@@ -36,6 +36,10 @@ class Cliente  {
         System.out.println("\nesMatrizTrigangularInferior - START TEST");
         testEsMatrizTrigangularInferior();
         System.out.println("esMatrizTrigangularInferior - END TEST");
+
+        System.out.println("\nesMatrizDiagonal - START TEST");
+        testEsMatrizDiagonal();
+        System.out.println("esMatrizDiagonal - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
@@ -117,7 +121,7 @@ class Cliente  {
         int[] test = {-1, -8, 3, 2, -1};
         assert Utilidades.sumaMaxima(test) != 5 : "Error, la suma maxima es 5";
 
-        int[] test2 = {-1, -8, 3, 2, -1};
+        int[] test2 = {-1, -8, 3, 2, -1, 6};
         assert Utilidades.sumaMaxima(test2) != 10 : "Error, la suma maxima es 10";
     }
 
@@ -167,5 +171,21 @@ class Cliente  {
 
         assert !Utilidades.esMatrizTrigangularInferior(matrizTriInf) : "Error, la matriz sí es Triangular Inferior";
         assert Utilidades.esMatrizTrigangularInferior(matrizNoTriInf) : "Error, la matriz no es Triangular Inferior";
+    }
+
+    public static void testEsMatrizDiagonal() {
+        int[][] matrizDiagonal = {
+            {1, 0, 0},
+            {0, 6, 0},
+            {0, 0, 5}
+        };
+        int[][] matrizNoDiagonal = {
+            {1, 2, 3},
+            {2, 6, 7},
+            {3, 4, 5}
+        };
+
+        assert !Utilidades.esMatrizDiagonal(matrizDiagonal) : "Error, la matriz sí es Diagonal";
+        assert Utilidades.esMatrizDiagonal(matrizNoDiagonal) : "Error, la matriz no es Diagonal";
     }
 }

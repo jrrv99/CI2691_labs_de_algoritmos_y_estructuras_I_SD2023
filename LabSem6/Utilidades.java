@@ -256,7 +256,7 @@ public class Utilidades {
 
         /*@
           @ maintaining 0 <= row <= matriz.length;
-          @ maintaining (\forall int i; 0 <= i && i <= row; (\forall int j; 0 <= j && j <= column; (i <= j) ==> (matriz[i][j] != 0) && (i > j) ==> (matriz[i][j] == 0)));
+          @ maintaining (\forall int i; 0 <= i && i <= row; (\forall int j; 0 <= j && j < matriz[row].length; (i <= j) ==> (matriz[i][j] != 0) && (i > j) ==> (matriz[i][j] == 0)));
           @ decreasing matriz.length - row;
           @*/
         while (row < matriz.length) {
@@ -290,7 +290,7 @@ public class Utilidades {
 
         /*@
           @ maintaining 0 <= row <= matriz.length;
-          @ maintaining (\forall int i; 0 <= i && i <= row; (\forall int j; 0 <= j && j <= column; (i >= j) ==> (matriz[i][j] != 0) && (i < j) ==> (matriz[i][j] == 0)));
+          @ maintaining (\forall int i; 0 <= i && i <= row; (\forall int j; 0 <= j && j < matriz[row].length; (i >= j) ==> (matriz[i][j] != 0) && (i < j) ==> (matriz[i][j] == 0)));
           @ decreasing matriz.length - row;
           @*/
         while (row < matriz.length) {
@@ -305,6 +305,39 @@ public class Utilidades {
                 if (row >= column && matriz[row][column] == 0) return false;
                 if (row < column && matriz[row][column] != 0) return false;
 
+                column++;
+            }
+            row++;
+        }
+
+        return true;
+    }
+
+    /*@
+      @ requires matriz != null;
+      @ requires matriz.length > 0;
+      @ requires (\forall int k; 0 <= k && k < matriz.length; matriz[k].length == matriz.length);
+      @ ensures \result == true <== (\forall int i; 0 <= i && i < matriz.length; (\forall int j; 0 <= j && j < matriz[i].length; ((i == j) ==> matriz[i][j] != 0) && ((i != j) ==> matriz[i][j] == 0)));
+      @*/
+    public static /*@ pure @*/ boolean esMatrizDiagonal(int[][] matriz) {
+        int row = 0, column;
+
+        /*@
+          @ maintaining 0 <= row <= matriz.length;
+          @ maintaining true <== (\forall int i; 0 <= i && i < row; (\forall int j; 0 <= j && j < matriz.length; ((i == j) ==> matriz[i][j] != 0) && ((i != j) ==> matriz[i][j] == 0)));
+          @ decreasing matriz.length - row;
+          @*/
+        while (row < matriz.length) {
+            column = 0;
+
+            /*@
+              @ maintaining 0 <= column <= matriz[row].length;
+              @ maintaining true <== (\forall int j; 0 <= j && j <= column; ((row == j) ==> matriz[row][j] != 0) && ((row != j) ==> matriz[row][j] == 0));
+              @ decreasing matriz[row].length - column;
+              @*/
+            while (column < matriz[row].length) {
+                if(row == column && matriz[row][column] == 0) return false;
+                if(row != column && matriz[row][column] != 0) return false;
                 column++;
             }
             row++;
