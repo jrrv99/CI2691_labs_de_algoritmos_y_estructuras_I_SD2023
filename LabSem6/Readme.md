@@ -50,7 +50,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 - [x] 9. esMatrizTrigangularSuperior
 - [x] 10. esMatrizTrigangularInferior
 - [x] 11. esMatrizDiagonal
-- [ ] 12. sumaSecuencia
+- [x] 12. sumaSecuencia
 - [ ] 13. promedioSecuencia
 - [ ] 14. desvStdSecuencia
 
