@@ -394,4 +394,42 @@ public class Utilidades {
 
         return Math.sqrt(desvStdSum / (sec.length * 0.1));
     }
+
+    /*@ requires sec != null;
+      @ requires sec.length > 0;
+      @ ensures (\forall int k; 0 <= k && k < sec.length; sec[k] <= sec[\result]);
+      @*/
+    public static /*@ pure @*/ int posicionDelMayorDeLaSecuencia(int[] sec) {
+        int i = 1, maxPos = i;
+
+        /*@ maintaining 0 <= i <= sec.length;
+          @ maintaining (\forall int k; 0 <= k && k < i; sec[k] <= sec[maxPos]);
+          @ decreasing sec.length - i;
+          @*/
+        while (i < sec.length) {
+            if (sec[i] > sec[maxPos]) maxPos = i;
+            i++;
+        }
+
+        return maxPos;
+    }
+
+    /*@ requires sec != null;
+      @ requires sec.length > 0;
+      @ ensures (\forall int k; 0 <= k && k < sec.length; sec[k] >= sec[\result]);
+      @*/
+    public static /*@ pure @*/ int posicionDelMenorDeLaSecuencia(int[] sec) {
+        int i = 1, minPos = 0;
+
+        /*@ maintaining 0 <= i <= sec.length;
+          @ maintaining (\forall int k; 0 <= k && k < i; sec[k] >= sec[minPos]);
+          @ decreasing sec.length - i;
+          @*/
+        while (i < sec.length) {
+            if (sec[i] < sec[minPos]) minPos = i;
+            i++;
+        }
+
+        return minPos;
+    }
 }

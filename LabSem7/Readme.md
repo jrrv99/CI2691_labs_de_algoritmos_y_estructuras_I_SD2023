@@ -13,7 +13,7 @@ Los códigos del laboratorio y la declaración de autenticidad debidamente firma
 ## Terminados
 
 - [x] 1. posicionDelMayorDeLaSecuencia:
-- [ ] 2. posicionDelMenorDeLaSecuencia:
+- [x] 2. posicionDelMenorDeLaSecuencia:
 - [ ] 3. valorAbsolutoReal:
 - [ ] 4. exponenteNumeroReal:
 - [ ] 5. exponenteExponenteNumeroReal:
