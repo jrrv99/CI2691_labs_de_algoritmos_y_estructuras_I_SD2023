@@ -365,4 +365,12 @@ public class Utilidades {
 
         return sum;
     }
+
+    /*@ requires sec != null;
+      @ requires sec.length > 0;
+      @ ensures \java_math(Math.abs(\result - (sumaSecuencia(sec) / (sec.length * 1.0))) < 0.001);
+      @*/
+    public static /*@ pure @*/ double promedioSecuencia(double[] sec) {
+        return sumaSecuencia(sec) / (sec.length * 1.0);
+    }
 }

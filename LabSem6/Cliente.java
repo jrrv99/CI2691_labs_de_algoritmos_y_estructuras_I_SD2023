@@ -44,6 +44,10 @@ class Cliente  {
         System.out.println("\nsumaSecuencia - START TEST");
         testSumaSecuencia();
         System.out.println("sumaSecuencia - END TEST");
+
+        System.out.println("\npromedioSecuencia - START TEST");
+        testPromedioSecuencia();
+        System.out.println("promedioSecuencia - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
@@ -197,5 +201,11 @@ class Cliente  {
         double[] sec = {1.2, 1.8, 1.2};
         double result = Utilidades.sumaSecuencia(sec), sum = 4.2;
         assert Math.abs(result - sum) <= 0.001 : "Error, el resultado correccto es: "+sum+", y el obtenido fue: "+result;
+    }
+
+    public static void testPromedioSecuencia() {
+        double[] sec = {1.2, 1.8, 1.2};
+        double result = Utilidades.sumaSecuencia(sec), promedio = 4.2/(sec.length * 1.0);
+        assert Math.abs(result - promedio) <= 0.001 : "Error, el resultado correccto es: "+promedio+", y el obtenido fue: "+result;
     }
 }
