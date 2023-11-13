@@ -40,6 +40,10 @@ class Cliente  {
         System.out.println("\nesMatrizDiagonal - START TEST");
         testEsMatrizDiagonal();
         System.out.println("esMatrizDiagonal - END TEST");
+
+        System.out.println("\nsumaSecuencia - START TEST");
+        testSumaSecuencia();
+        System.out.println("sumaSecuencia - END TEST");
     }
 
     private static boolean checkFechas(int[] fcorrecta, int[] fobtenida) {
@@ -187,5 +191,11 @@ class Cliente  {
 
         assert !Utilidades.esMatrizDiagonal(matrizDiagonal) : "Error, la matriz sí es Diagonal";
         assert Utilidades.esMatrizDiagonal(matrizNoDiagonal) : "Error, la matriz no es Diagonal";
+    }
+
+    public static void testSumaSecuencia() {
+        double[] sec = {1.2, 1.8, 1.2};
+        double result = Utilidades.sumaSecuencia(sec), sum = 4.2;
+        assert Math.abs(result - sum) <= 0.001 : "Error, el resultado correccto es: "+sum+", y el obtenido fue: "+result;
     }
 }

@@ -345,4 +345,24 @@ public class Utilidades {
 
         return true;
     }
+
+    /*@ requires sec != null;
+      @ requires sec.length > 0;
+      @ ensures \java_math(Math.abs(\result - (\sum int i; 0 <= i && i < sec.length; sec[i])) < 0.001);
+      @*/
+    public static /*@ pure @*/ double sumaSecuencia (double[] sec) {
+        double sum = 0;
+        int i = 0;
+
+        /*@ maintaining 0 <= i <= sec.length;
+          @ maintaining \java_math(Math.abs(sum - (\sum int k; 0 <= k && k < i; sec[k])) < 0.001);
+          @ decreasing sec.length - i;
+          @*/
+        while (i < sec.length) {
+            sum += sec[i];
+            i++;
+        }
+
+        return sum;
+    }
 }
