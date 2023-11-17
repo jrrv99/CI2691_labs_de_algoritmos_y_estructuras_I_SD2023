@@ -433,11 +433,57 @@ public class Utilidades {
         return minPos;
     }
 
-    /*@ requires x != null;
-      @ ensures \java_math(\Math.abs(\result - Math.abs(x)) < 0.001);
+    /*@ requires true;
+      @ ensures \java_math(Math.abs(\result - Math.abs(x)) < 0.001);
       @*/
     public static /*@ pure @*/ double valorAbsolutoReal(double x) {
         if (x >= 0) return x;
         return -x;
+    }
+
+    /*@ requires Integer.MIN_VALUE <= y && y <= Integer.MAX_VALUE;
+      @ ensures \result >= 0;
+      @ ensures \java_math(Math.abs(\result - Math.pow(x, y*1.0)) < 0.001);
+      @*/
+    public static /*@ pure @*/ double exponenteNumeroReal(double x, int y) {
+        double result = 1.0;
+        int pivot = (y >= 0) ? y : -y;
+
+        /*@
+          @ maintaining pivot >= 0;
+          @ maintaining result >= 1.0;
+          @ maintaining (\forall int i; 0 <= i && i < pivot; result == result * x);
+          @ decreasing pivot;
+          @*/
+        while (pivot > 0) {
+            result *= x;
+            pivot--;
+        }
+
+        return (y >= 0) ? result : 1/result;
+    }
+
+    /*@ requires Integer.MIN_VALUE <= y && y <= Integer.MAX_VALUE;
+      @ requires Integer.MIN_VALUE <= z && z <= Integer.MAX_VALUE;
+      @ ensures \result >= 0;
+      @ ensures \java_math(Math.abs(\result - Math.pow(x, z * y * 1.0)) < 0.001);
+      @*/
+    public static /*@ pure @*/ double exponenteExponenteNumeroReal(double x, int y, int z) {
+        return exponenteNumeroReal(x, y*z);
+    }
+
+    //@ requires 0 < x && x <= 2;
+    //@ ensures \java_math(Math.abs(\result - Math.log(x)) <= 0.01);
+    public static /*@ pure @*/ double logaritmoNatural(double x) {
+        int i = 0;
+        double sum = 0;
+
+        //@ maintaining 0 <= i <= 1001;
+        //@ decreases 1001 - i;
+        while (i < 1001) {
+            sum = sum + (Math.pow(-1,i)*Math.pow(x-1,i+1))/(i+1);
+            ++i;
+        }
+        return sum;
     }
 }
