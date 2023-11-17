@@ -4,7 +4,7 @@ public class EsPermutacion {
       @ requires arr1.length == arr2.length;
       @ requires (\forall int k; 0 <= k && k < arr1.length; 0 <= arr1[k] && arr1[k] < arr1.length);
       @ requires (\forall int k; 0 <= k && k < arr2.length; 0 <= arr2[k] && arr2[k] < arr2.length);
-      @ ensures \result == true <==> (\forall int z; 0 <= z && z < arr1.length; (\num_of int k; 0 <= k && k < arr1.length; arr1[k] == z) == (\num_of int k; 0 <= k && k < arr2.length; arr2[k] == z));
+      @ ensures \result == true <== (\forall int z; 0 <= z && z < arr1.length; (\num_of int k; 0 <= k && k < arr1.length; arr1[k] == z) == (\num_of int k; 0 <= k && k < arr2.length; arr2[k] == z));
       @*/
     public static boolean esPermutacion(int[] arr1, int[] arr2) {
         int i = 0;
